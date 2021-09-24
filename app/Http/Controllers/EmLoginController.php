@@ -20,7 +20,7 @@ class EmLoginController extends Controller
                 'exceptions' => true,
                 'location' => "https://10.175.200.10:8443/axl/",
                 'login' => 'Administrator',
-                'password' => 'A$h8urn!',
+                'password' => 'Password',
                 'stream_context' => stream_context_create([
                     'ssl' => [
                         'verify_peer' => false,
@@ -84,8 +84,8 @@ class EmLoginController extends Controller
             if (filter_var($res->return->userAuthenticated, FILTER_VALIDATE_BOOLEAN)) {
 
                 // Query Duo
-                $ikey = 'DIVN8OEDZDJ7MJVB78AG';
-                $skey = 'bws8CmkJ0z6e3SmOOkhEUJuCRlm5XehyyUqhz6LH';
+                $ikey = 'DUO_I_KEY';
+                $skey = 'DUO_S_KEY';
                 $host = 'api-ebc76152.duosecurity.com';
 
                 $duo = new \DuoAPI\Auth($ikey, $skey, $host);
